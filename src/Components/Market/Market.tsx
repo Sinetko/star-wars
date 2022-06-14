@@ -1,7 +1,9 @@
 import * as React from "react";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { FiltersBar } from "./FiltersBar/FiltersBar";
 import { MarketCard } from "../StyledComponents/Cards/MarketCard/MarketCard";
 import { Styled } from "./styles";
+import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { useMarketData } from "../../customHooks/useMarketData";
 
 export const Market: React.FC = () => {
@@ -15,7 +17,15 @@ export const Market: React.FC = () => {
 
   return (
     <Styled.Container>
-      <FiltersBar />
+      <div>
+        <Styled.FavoritesLink to="/market/favorites">
+          <span style={{ marginRight: "5px" }}>
+            <FavoriteBorderIcon color="action" fontSize="medium" />
+          </span>
+          <StyledElement.H5>Favorites</StyledElement.H5>
+        </Styled.FavoritesLink>
+        <FiltersBar />
+      </div>
       <Styled.Goods>
         {marketData.map((card) => (
           <MarketCard

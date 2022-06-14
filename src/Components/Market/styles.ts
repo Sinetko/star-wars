@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -6,6 +7,17 @@ const Container = styled.div`
   align-items: flex-start;
   justify-items: flex-start;
   width: 100%;
+`;
+
+const FavoritesLink = styled(Link)`
+  background: var(--primary4);
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  padding: 5px 20px;
+  margin-top: 7px;
 `;
 
 const Goods = styled.div`
@@ -21,5 +33,6 @@ const Goods = styled.div`
 
 export const Styled = {
   Container,
+  FavoritesLink,
   Goods,
 };

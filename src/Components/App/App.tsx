@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Chat } from "../Chat/Chat";
 import { Content } from "../Content/Content";
+import { Favorites } from "../Market/Favorites/Favorites";
 import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
 import { Films } from "../Content/Films";
 import { Footer } from "../Footer/Footer";
@@ -50,6 +51,7 @@ export const App = () => {
               }
             />
             <Route path="market" element={<Market />} />
+            <Route path="market/favorites" element={<Favorites />} />
             <Route path="market/:id" element={<ProductPage />} />
           </Routes>
         </Content>
