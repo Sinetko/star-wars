@@ -44,6 +44,13 @@ const ImageContainer = styled.div`
   flex-grow: 1;
 `;
 
+const Favorites = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+`;
+
 const Discount = styled.div`
   position: absolute;
   top: 0px;
@@ -91,6 +98,7 @@ export const Styled = {
   Image,
   Discount,
   ImageContainer,
+  Favorites,
   Title,
   Price,
   OldPrice,
