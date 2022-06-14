@@ -4,12 +4,6 @@ import styled from "styled-components";
 import { useLocalStorage } from "../../../customHooks/useLocalStorage";
 import { useProductData } from "../../../customHooks/useProductData";
 
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-`;
-
 export const Favorites: React.FC = () => {
   const key = "favorites";
 
@@ -34,3 +28,9 @@ export const Favorites: React.FC = () => {
 
   return <GridContainer>{cards}</GridContainer>;
 };
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+`;
