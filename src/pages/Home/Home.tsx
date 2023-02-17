@@ -1,8 +1,8 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
+import { StyledElement } from "../../Components/StyledComponents/Elements/Elements";
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
     <Styled.ContentContainer>
       <Styled.Content>

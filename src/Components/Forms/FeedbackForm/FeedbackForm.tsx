@@ -1,9 +1,12 @@
-import * as React from "react";
-import { Styled } from "./styles";
-import { isValidUserName } from "../../../helpers/validators/validators";
+import React from "react";
 import { Field, Formik, FormikValues } from "formik";
 
+import { isValidUserName } from "../../../helpers/validators/validators";
+import { useModal } from "../../../context/ModalContext";
+import { Styled } from "./styles";
+
 export const FeedbackForm: React.FC = () => {
+  const { setIsOpenFeedback } = useModal();
   return (
     <Formik
       initialValues={{
@@ -11,8 +14,9 @@ export const FeedbackForm: React.FC = () => {
         text: "",
       }}
       onSubmit={(values) => {
-        // eslint-disable-next-line no-console
-        console.log(values.text);
+        //eslint-disable-next-line
+        alert(`Thank you for feedback`);
+        setIsOpenFeedback(false);
       }}
     >
       {({ errors, touched }) => (

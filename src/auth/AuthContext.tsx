@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { FC, createContext, useContext, useState } from "react";
+
 import {
   FacebookAuthProvider,
   GithubAuthProvider,
@@ -10,11 +11,10 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { useContext, useState } from "react";
 
-const AuthContext = React.createContext(null);
+const AuthContext = createContext(null);
 
-const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: FC = ({ children }) => {
   const [userName, setUserName] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
@@ -47,8 +47,6 @@ const AuthProvider: React.FC = ({ children }) => {
   const facebookAuth = async (): Promise<void> => {
     try {
       const response = await signInWithPopup(auth, facebookProvider);
-      // eslint-disable-next-line no-console
-      console.log(response);
       Login(response.user);
     } catch (error) {
       throw new Error(

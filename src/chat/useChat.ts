@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+
 import { db } from "../firebase/firebaseConfig";
 import { useAuth } from "./../auth/AuthContext";
 import {

@@ -1,4 +1,6 @@
-import * as React from "react";
+import React, { FC } from "react";
+import { useParams } from "react-router-dom";
+
 import { ProductBuySection } from "./ProductBuySection/ProductBuySection";
 import { ProductCommentsSection } from "./ProductCommentsSection/ProductCommentsSection";
 import { ProductInfoSection } from "./ProductInfoSection/ProductInfoSection";
@@ -6,13 +8,14 @@ import { ProductPreviewSection } from "./ProductPreviewSection/ProductPreviewSec
 import { Styled } from "./styles";
 import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { useCommentsData } from "../../customHooks/useCommentsData";
-import { useParams } from "react-router-dom";
 import { useProductData } from "../../customHooks/useProductData";
 
-export const ProductPage: React.FC = () => {
+export const ProductPage: FC = () => {
   const params = useParams();
+
   const { productData } = useProductData(params.id);
   const { comments } = useCommentsData(params.id);
+
   return (
     <Styled.Page>
       <StyledElement.H5>{productData[0].title}</StyledElement.H5>

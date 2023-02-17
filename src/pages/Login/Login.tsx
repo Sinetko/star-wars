@@ -1,12 +1,16 @@
-import * as React from "react";
-import { SignInForm } from "../Forms/SignInForm/SignInForm";
-import { Styled } from "./styles";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { SignInForm } from "../../Components/Forms";
+
+import { useAuth } from "../../auth";
+
 import bgImage from "../../assets/backgrounds/rey.png";
 import facebookIcon from "../../assets/icons/facebook.png";
 import gitIcon from "../../assets/icons/github.png";
 import googleIcon from "../../assets/icons/google.png";
-import { useAuth } from "../../auth/AuthContext";
-import { useLocation, useNavigate } from "react-router-dom";
+
+import { Styled } from "./styles";
 
 interface LocationState {
   from?: {
@@ -23,7 +27,7 @@ export const Login = () => {
   //react-router-dom don`t have this interface
   const from = (location.state as LocationState)?.from?.pathname || "/";
 
-  React.useEffect(() => {
+  useEffect(() => {
     userId && navigate(from, { replace: true });
   }, [userId, from, navigate]);
 
